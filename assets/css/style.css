@@ -1,0 +1,316 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root,:root[data-tema='dark']{
+    --corPrimaria:#F0F0F0;
+    --corPrimaria-BG:#100C18;
+    --corSecundaria-BG:#28292E;
+
+    --corBorda: #4C39AC;
+    --corTitulo:#F0F0F0;
+    --corTexto:#9A9A9C;
+    --corLink: #9A9A9C;
+    --corIcon:#C7C8C9;
+}
+:root[data-tema='light']{
+    --corPrimaria:#0B0B0F;
+    --corPrimaria-BG:#E9E9E9;
+    --corSecundaria-BG:#C7C8C9;
+
+    --corBorda: #4C39AC;
+    --corTitulo:#0B0B0F;
+    --corTexto:#28292E;
+    --corLink: #28292E;
+    --corIcon:#56575A;
+}
+body{
+    background-color: var(--corPrimaria-BG);
+    color: var(--corPrimaria);
+    font-family: "Roboto", sans-serif;
+    position: relative;
+}
+/* .retangulo-flutuante{
+    position: relative;
+    height: 70px;
+    left: 0;
+    width: 100%;
+    background-color: var(--corBorda);
+    top: 10px;
+    z-index: -1;
+} */
+header{
+    margin: 0 auto;
+    border-bottom: 3px solid var(--corBorda);
+}
+header img{
+    max-height: 60px;
+    border-radius: 15px;
+}
+nav{
+    justify-content: space-evenly;
+    align-items: center;
+    display: flex;
+    margin: 0 auto;
+    max-width: 1500px;
+    height: 75px;
+    padding: 5px;
+}
+nav ol{
+    display: flex;
+    text-transform: uppercase;
+}
+nav li{
+    padding: 22px 20px;
+}
+
+/* Inicio */
+.inicio{
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 40px 20px;
+    border-bottom: 2px solid var(--corBorda);
+}
+.inicio h1{
+    font-size: 3rem;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+    line-height: 1.2;
+}
+/* #938AD4 */
+.inicio span{
+    background: linear-gradient(90deg, #B8AAFF, #8C7BFE);
+    color: currentColor;
+    background-clip: text;
+    color: transparent;
+}
+.inicio h3{ 
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--corTexto);
+}
+.area-interagir{
+    padding: 10px;
+    gap: 10px;
+    display: flex;
+}
+.button-visual-borda{
+    background-color: transparent;
+    border: 1px solid var(--corBorda);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 25px;
+    color: var(--corLink);
+}
+.button-visual{
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 15px;
+    color: var(--corLink);    
+}
+/* CSS Sobre */
+.sobre{
+    margin: 0 auto;
+    max-width: 1000px;
+    border-bottom: 2px solid var(--corBorda);
+    padding: 20px;
+    padding-bottom: 35px;
+}
+.sobre-resumo{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 60px auto;
+}
+.sobre-img img{
+    max-width: 250px;
+    border-radius: 50%;
+    border: thick double var(--corBorda);
+}
+.resumo-conteudo{
+    max-width: 500px;
+}
+.resumo-conteudo h2{
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 5px;
+}
+.resumo-conteudo p{
+    font-size: 1rem;
+    margin: 10px 0;
+}
+.resumo-conteudo span{
+    display: block;
+    margin-bottom: 10px;
+}
+
+.sobre-formacao{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+.sobre-formacao h2{
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: 400;
+    letter-spacing: 5px;
+}
+.sobre-formacao h3{
+    font-size: 1.15rem;
+}
+.cada-formacao,
+.cada-experiencia{
+    margin-left: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    line-height: 20px;
+}
+
+.sobre-formacao h4,
+.sobre-formacao li{
+    color: var(--corTexto);
+}
+p{
+    color: var(--corTexto);
+}
+.formacao{
+    margin-bottom: 25px;
+}
+.cada-experiencia h4{
+    margin-bottom: 5px;
+}
+.cada-experiencia li{
+    list-style: disc;
+    margin-left: 18px;
+    line-height: 16px;
+    margin-bottom: 8px;
+    color: var(--corIcon);
+}
+
+/* Cursos complementares */
+.front-end,
+.ti-redes,
+.complementares{
+    border: 2px solid var(--corBorda);
+    
+}
+.ti-redes{
+    border-top: 0;
+    border-bottom: 0;
+}
+.front-end{
+    border-radius: 10px 10px 0 0;
+}
+.complementares{
+    border-radius:0 0 10px 10px;
+}
+.front-end h3,
+.ti-redes h3,
+.complementares h3{
+    padding: 10px;
+    border-bottom: 2px solid var(--corBorda);
+}
+.front-end ol,
+.ti-redes ol,
+.complementares ol{
+    padding: 10px;
+
+}
+.front-end li,
+.ti-redes li,
+.complementares li{
+    list-style: disc;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    color: var(--corIcon);
+}
+.area-redes{
+    display: flex;
+    padding: 15px 0;
+}
+/* CSS Projetos */
+main{
+    margin: 40px auto;
+    max-width: 1000px;
+    padding: 20px;
+    padding-bottom: 35px;
+    border-bottom: 2px solid var(--corBorda);
+    position: relative;
+}
+main h1{
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: 5px;
+}
+.slider{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 50px;
+}
+.slider img{
+    border-radius: 15px;
+    border: 1px solid var(--corLink);
+    box-shadow: 1px 2px 3px #0000003b;
+}
+.slider a{
+    display: block;
+    max-width: 750px;
+}
+.img-maior img{
+    min-width: 350px;
+    width: 100%;
+}
+.slider ol{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.slider li{
+    display: block;
+    width: 200px;
+}
+.slider ol img{
+    min-width: 150px;
+    width: 100%;
+}
+
+/* CSS Contato */
+.contato{
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1000px;
+    text-align: center;
+}
+.contato h2{
+    font-size: 2.5rem;
+    font-weight: 400;
+    letter-spacing: 5px;
+    margin: 20px auto;
+}
+.contato h3{
+    line-height: 18px;
+    margin-bottom: 15px;
+}
+.redes-contato ol{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* CSS Footer */
+footer{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    border-top: 3px solid var(--corBorda);
+}
