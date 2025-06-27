@@ -11,6 +11,9 @@
     --corTexto:#9A9A9C;
     --corLink: #9A9A9C;
     --corIcon:#C7C8C9;
+
+    --corTitulo-linear1:#B8AAFF;
+    --corTitulo-linear2:#8C7BFE;
 }
 :root[data-tema='light']{
     --corPrimaria:#0B0B0F;
@@ -22,6 +25,9 @@
     --corTexto:#28292E;
     --corLink: #28292E;
     --corIcon:#56575A;
+
+    --corTitulo-linear1:#B8AAFF;
+    --corTitulo-linear2:#8C7BFE;
 }
 body{
     background-color: var(--corPrimaria-BG);
@@ -59,8 +65,10 @@ nav ol{
     display: flex;
     text-transform: uppercase;
 }
-nav li{
+nav li a{
     padding: 22px 20px;
+    color: white;
+    font-weight: 700;
 }
 
 /* Inicio */
@@ -78,7 +86,7 @@ nav li{
 }
 /* #938AD4 */
 .inicio span{
-    background: linear-gradient(90deg, #B8AAFF, #8C7BFE);
+    background: linear-gradient(90deg, var(--corTitulo-linear1),var(--corTitulo-linear2));
     color: currentColor;
     background-clip: text;
     color: transparent;
@@ -93,23 +101,9 @@ nav li{
     gap: 10px;
     display: flex;
 }
-.button-visual-borda{
-    background-color: transparent;
-    border: 1px solid var(--corBorda);
-    border-radius: 15px;
+.redes{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 25px;
-    color: var(--corLink);
-}
-.button-visual{
-    background-color: transparent;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5px 15px;
-    color: var(--corLink);    
+    gap: 10px;
 }
 /* CSS Sobre */
 .sobre{
@@ -118,6 +112,7 @@ nav li{
     border-bottom: 2px solid var(--corBorda);
     padding: 20px;
     padding-bottom: 35px;
+    position: relative;
 }
 .sobre-resumo{
     display: flex;
@@ -129,6 +124,7 @@ nav li{
     max-width: 250px;
     border-radius: 50%;
     border: thick double var(--corBorda);
+     box-shadow: 1px 2px 2px var(--corBorda);
 }
 .resumo-conteudo{
     max-width: 500px;
@@ -138,6 +134,9 @@ nav li{
     text-transform: uppercase;
     font-weight: 400;
     letter-spacing: 5px;
+    background: linear-gradient(90deg, var(--corTitulo-linear1), var(--corTitulo-linear2));
+    background-clip: text;
+    color: transparent;
 }
 .resumo-conteudo p{
     font-size: 1rem;
@@ -158,6 +157,7 @@ nav li{
     margin-bottom: 10px;
     font-weight: 400;
     letter-spacing: 5px;
+color: var(--corTitulo-linear1);
 }
 .sobre-formacao h3{
     font-size: 1.15rem;
@@ -169,6 +169,7 @@ nav li{
     flex-direction: column;
     gap: 15px;
     line-height: 20px;
+    position: relative;
 }
 
 .sobre-formacao h4,
@@ -181,8 +182,12 @@ p{
 .formacao{
     margin-bottom: 25px;
 }
+.cada-experiencia h3{
+    margin-left: 35px;
+}
 .cada-experiencia h4{
     margin-bottom: 5px;
+    margin-left: 35px;
 }
 .cada-experiencia li{
     list-style: disc;
@@ -191,7 +196,27 @@ p{
     margin-bottom: 8px;
     color: var(--corIcon);
 }
+.formacao-extra h3{
+    display: flex;
+    justify-content: space-between;
+}
+.cada-formacao h4{
+    margin-left: 35px;
+}
 
+.cada-formacao span,
+.cada-experiencia span{
+    width: 30px;
+    position: absolute;
+    left: 0px;
+}
+
+.cada-formacao .ads span{
+    top: 20px;
+}
+.cada-formacao .origamid span{
+    top: 95px;
+}
 /* Cursos complementares */
 .front-end,
 .ti-redes,
@@ -242,12 +267,15 @@ main{
     border-bottom: 2px solid var(--corBorda);
     position: relative;
 }
-main h1{
+main h2{
     font-size: 2.5rem;
     margin-bottom: 30px;
     font-weight: 400;
     text-align: center;
     letter-spacing: 5px;
+    background: linear-gradient(90deg, var(--corTitulo-linear1), var(--corTitulo-linear2));
+    background-clip: text;
+    color: transparent;
 }
 .slider{
     display: flex;
@@ -255,6 +283,7 @@ main h1{
     flex-wrap: wrap;
     width: 100%;
     gap: 50px;
+    position: relative;
 }
 .slider img{
     border-radius: 15px;
@@ -269,18 +298,28 @@ main h1{
     min-width: 350px;
     width: 100%;
 }
-.slider ol{
+.galeria-slider ol{
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
-.slider li{
+.galeria-slider li{
     display: block;
     width: 200px;
 }
-.slider ol img{
+.galeria-slider ol img{
     min-width: 150px;
     width: 100%;
+    opacity: 0.4;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+.galeria-slider ol img:hover{
+    opacity: 1;
+}
+.img-ativa{
+    opacity: 1 !important;
+    transform: scale(1.1);
 }
 
 /* CSS Contato */
@@ -295,6 +334,9 @@ main h1{
     font-weight: 400;
     letter-spacing: 5px;
     margin: 20px auto;
+    background: linear-gradient(90deg, var(--corTitulo-linear1), var(--corTitulo-linear2));
+    background-clip: text;
+    color: transparent;
 }
 .contato h3{
     line-height: 18px;
@@ -313,4 +355,57 @@ footer{
     padding: 20px;
     font-size: 0.9rem;
     border-top: 3px solid var(--corBorda);
+}
+
+.button-visual-borda{
+    background-color: transparent;
+    border: 1px solid var(--corBorda);
+    border-radius: 15px;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 25px;
+    box-sizing: border-box;
+    color: var(--corLink);
+    gap: 10px;
+    position: relative;
+    box-shadow: 1px 2px 2px var(--corBorda);
+    transition: all 0.5s ease;
+}
+.button-visual-borda:hover{
+   box-shadow: 1px 3px 5px var(--corTitulo-linear2);
+   color: var(--corTitulo);
+}
+.button-visual-borda span{
+    display: block;
+    margin: 0px;
+    color: var(--corPrimaria);
+    transform: rotate(310deg);
+    transition: all 0.5s ease;
+}
+.button-visual-borda:hover span{
+    transform: rotate(340deg);
+    color: var(--corTitulo-linear1);
+}
+
+.button-visual{
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 15px;
+    color: var(--corLink);    
+    transition: all 0.5s ease;
+}
+.button-visual:hover{
+   color: var(--corPrimaria);
+}
+.button-visual span{
+    margin: 0px;
+    transition: all 0.5s ease;
+}
+.button-visual:hover span{
+    transform: rotate(320deg);
+    color: var(--corPrimaria);
 }
