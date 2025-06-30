@@ -30,11 +30,13 @@
     --corTitulo-linear2:#8C7BFE;
 }
 body{
+    padding-top: 80px;
     background-color: var(--corPrimaria-BG);
     color: var(--corPrimaria);
     font-family: "Roboto", sans-serif;
     position: relative;
 }
+
 /* .retangulo-flutuante{
     position: relative;
     height: 70px;
@@ -47,6 +49,11 @@ body{
 header{
     margin: 0 auto;
     border-bottom: 3px solid var(--corBorda);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: var(--corPrimaria-BG);
+    z-index: 99;
 }
 header img{
     max-height: 60px;
@@ -63,12 +70,21 @@ nav{
 }
 nav ol{
     display: flex;
+    align-items: center;
+    justify-content: center;
     text-transform: uppercase;
 }
 nav li a{
     padding: 22px 20px;
     color: white;
     font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+nav ol img{
+    border-radius: 0;
 }
 
 /* Inicio */
@@ -104,6 +120,13 @@ nav li a{
 .redes{
     display: flex;
     gap: 10px;
+    cursor: pointer;
+}
+.redes li{
+    transition: all 0.5s ease;
+}
+.redes li:hover{
+    transform: rotate(45deg);
 }
 /* CSS Sobre */
 .sobre{
@@ -139,8 +162,10 @@ nav li a{
     color: transparent;
 }
 .resumo-conteudo p{
-    font-size: 1rem;
+    font-size: 1.1rem;
+    line-height: 20px;
     margin: 10px 0;
+    text-indent: 30px;
 }
 .resumo-conteudo span{
     display: block;
@@ -264,7 +289,6 @@ main{
     max-width: 1000px;
     padding: 20px;
     padding-bottom: 35px;
-    border-bottom: 2px solid var(--corBorda);
     position: relative;
 }
 main h2{
@@ -284,6 +308,8 @@ main h2{
     width: 100%;
     gap: 50px;
     position: relative;
+    border-bottom: 2px solid var(--corBorda);
+    padding-bottom: 30px;
 }
 .slider img{
     border-radius: 15px;
@@ -295,13 +321,14 @@ main h2{
     max-width: 750px;
 }
 .img-maior img{
-    min-width: 350px;
+    min-width: 320px;
     width: 100%;
 }
 .galeria-slider ol{
     display: flex;
     flex-direction: column;
     gap: 20px;
+    
 }
 .galeria-slider li{
     display: block;
@@ -408,4 +435,139 @@ footer{
 .button-visual:hover span{
     transform: rotate(320deg);
     color: var(--corPrimaria);
+}
+
+/* CSS Projetos */
+.multi-projetos{
+    margin: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+.cada-projeto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.cada-projeto a{
+    max-width: 250px;
+    margin: 0 auto;
+}
+.projeto-img img{
+    width: 450px;
+    border-radius: 10px;
+}
+.projeto-sobre{
+    max-width: 400px;
+}
+.projeto-sobre h3{
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+.projeto-sobre h4{
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+.projeto-sobre li{
+    list-style: disc;
+    margin-left: 20px;
+    margin-bottom: 5px;
+}
+@media(width<1000px){
+    .slider{
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .slider ol{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .galeria-slider{
+        flex-wrap: wrap;
+    }
+    .galeria-slider li{
+        width: auto;
+    }
+    .galeria-slider ol img{
+        width: 60px;
+    }
+
+}
+@media(width < 600px){
+    .logo{
+        display: none;
+    }
+    nav li a{
+        flex-wrap: wrap;
+    }
+    .inicio{
+        margin-top: 20px;
+    }
+    .inicio h1{
+        font-size: 2.2rem;
+        text-align: center;
+    }
+    .inicio h3{
+        text-align: center;
+    }
+    .area-interagir{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .area-redes{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    .sobre-resumo{
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-top: 10px;
+    }
+    .sobre-formacao{
+        flex-wrap: wrap;
+    }
+    .slider{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .slider ol{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .galeria-slider li{
+    width: auto;
+    }
+    .galeria-slider ol img{
+        width: 60px;
+    }
+    .projetos{
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+    }
+    .cada-projeto{
+    flex-wrap: wrap;
+    gap: 50px;
+    }
+    .cada-projeto:nth-child(even){
+        flex-direction: column-reverse;
+    }
+    .projeto-img img{
+    width: 350px;
+    }
+}
+@media(width < 400px){
+    .cada-formacao .ads span{
+    top: 40px;
+    }
+    .cada-formacao .origamid span{
+    top: 150px;
+    }
 }
