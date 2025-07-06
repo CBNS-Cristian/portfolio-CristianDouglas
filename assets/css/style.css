@@ -1,6 +1,7 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* Código CSS Base diretamente na raiz da página. */
 :root,:root[data-tema='dark']{
     --corPrimaria:#F0F0F0;
     --corPrimaria-BG:#100C18;
@@ -29,6 +30,8 @@
     --corTitulo-linear1:#B8AAFF;
     --corTitulo-linear2:#8C7BFE;
 }
+
+/* Código CSS partindo do Body e Menu fixo em todas as páginas */
 body{
     padding-top: 80px;
     background-color: var(--corPrimaria-BG);
@@ -93,7 +96,7 @@ nav ol img{
     border-radius: 0;
 }
 
-/* Inicio */
+/* Código CSS da seção Inicio da página*/
 .inicio{
     max-width: 1000px;
     margin: 60px auto;
@@ -142,7 +145,7 @@ nav ol img{
 #icon-tema img:hover{
     transform: rotate(-45deg);
 }
-/* CSS Sobre */
+/* Código CSS para a seção Sobre, desde a experiência e formações */
 .sobre{
     margin: 0 auto;
     max-width: 1000px;
@@ -316,7 +319,7 @@ p{
     display: flex;
     padding: 15px 0;
 }
-/* CSS Projetos */
+/* Código CSS para a seção Projetos e complementares*/
 main{
     margin: 40px auto;
     max-width: 1000px;
@@ -382,7 +385,7 @@ main h2{
     transform: scale(1.1);
 }
 
-/* CSS Contato */
+/* Código CSS para a seção Contato */
 .contato{
     padding: 20px;
     margin: 0 auto;
@@ -419,7 +422,7 @@ main h2{
     display: flex;
     align-items: center;
 }
-/* CSS Footer */
+/* Código CSS do Footer */
 footer{
     display: flex;
     justify-content: center;
@@ -481,7 +484,7 @@ footer{
     color: var(--corPrimaria);
 }
 
-/* CSS Projetos */
+/* Código CSS da página 'Projetos', com a arquitetura para conter todos os projetos */
 .multi-projetos{
     margin: 50px 0;
     display: flex;
@@ -530,6 +533,8 @@ footer{
     max-width: 50px;
     margin-left: 20px;
 }
+
+/* Código CSS Base para a responsividade e adaptação da página */
 @media(width<1000px){
     .slider{
         flex-direction: column;

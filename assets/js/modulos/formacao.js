@@ -1,3 +1,4 @@
+// Código base para a animação e interação em escolher os cursos complementares e base do currículo.  
 export default function formacao(){
     const areaCursos = document.querySelectorAll('.formacao-extra ol');
     const h3Cursos = document.querySelectorAll('.formacao-extra h3');
