@@ -352,9 +352,12 @@ main h2{
     border: 1px solid var(--corBorda);
     box-shadow: 1px 2px 3px #0000003b;
 }
-.slider a{
+.slider div{
     display: block;
     max-width: 750px;
+}
+.img-maior{
+    transition: all 0.5 ease;
 }
 .img-maior img{
     min-width: 320px;
@@ -364,7 +367,7 @@ main h2{
     display: flex;
     flex-direction: column;
     gap: 20px;
-    
+    transition: all 0.5 ease;
 }
 .galeria-slider li{
     display: block;
@@ -383,6 +386,7 @@ main h2{
 .img-ativa{
     opacity: 1 !important;
     transform: scale(1.1);
+    animation: all 0.5 ease;
 }
 
 /* Código CSS para a seção Contato */

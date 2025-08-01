@@ -15,7 +15,7 @@
     <header>
         <nav>
             <div class="logo">
-                <a href="#">
+                <a href="https://cbns-cristian.github.io/portfolio-CristianDouglas/index.html">
                     <img src="https://cbns-cristian.github.io/portfolio-CristianDouglas/assets/imagens/logo-1.png" alt="">
                 </a>
             </div>
@@ -45,11 +45,11 @@
         </aside>
         <h2>PROJETOS</h2>
         <section class="slider">
-            <a href="#" class="img-maior"><img src="https://cbns-cristian.github.io/portfolio-CristianDouglas/assets/imagens/model3.png" alt=""></a>
+            <div  class="img-maior"><img src="https://cbns-cristian.github.io/portfolio-CristianDouglas/assets/imagens/model3.png" alt=""></div>
             <div class="galeria-slider">
                 <ol>
-                    <li><img src="https://cbns-cristian.github.io/portfolio-CristianDouglas/assets/imagens/model3.png" alt=""></li>
-                    <li><img class="img-ativa"  src="https://cbns-cristian.github.io/portfolio-CristianDouglas/assets/imagens/model2.png" alt=""></li>
+                    <li><img class="img-ativa" src="https://cbns-cristian.github.io/portfolio-CristianDouglas/assets/imagens/model3.png" alt=""></li>
+                    <li><img   src="https://cbns-cristian.github.io/portfolio-CristianDouglas/assets/imagens/model2.png" alt=""></li>
                     <li><img src="https://cbns-cristian.github.io/portfolio-CristianDouglas/assets/imagens/model1.png" alt=""></li>
                 </ol>
             </div>
@@ -191,5 +191,28 @@
      </footer>
 
     <script src="https://cbns-cristian.github.io/portfolio-CristianDouglas/assets/js/script.js" type="module" defer></script>
+     <script>
+        function trocarImgs(){
+            let imgMaior = document.querySelector('.img-maior img');
+            let galeriaImgs = document.querySelectorAll(".galeria-slider img");
+            let atributoMaior = imgMaior.getAttribute('src', "assets/imagens/model3.png")
+            
+    
+                galeriaImgs.forEach((item)=>{             
+                   item.addEventListener('click', ()=>{
+                    if(item.classList.contains('img-ativa')) return;
+        
+                    galeriaImgs.forEach(i => i.classList.remove('img-ativa'));
+                    
+                    item.classList.add('img-ativa');
+
+                    const imgSrc = item.getAttribute('src')
+                    imgMaior.setAttribute('src', `${imgSrc}`);
+                    })
+                })
+        };
+
+        trocarImgs();
+     </script>
 </body>
 </html>

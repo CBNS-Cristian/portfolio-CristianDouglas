@@ -13,7 +13,7 @@
     <header>
         <nav>
             <div class="logo">
-                <a href="#">
+                <a href="./index.html">
                     <img src="assets/imagens/logo-1.png" alt="">
                 </a>
             </div>
@@ -146,12 +146,12 @@
         </aside>
         <h2>PROJETOS</h2>
         <div class="slider">
-            <a href="#" class="img-maior"><img src="assets/imagens/model3.png" alt=""></a>
+            <div class="img-maior"><img src="assets/imagens/model3.png" alt=""></div>
             <div class="galeria-slider">
                 <ol>
-                    <li><img src="assets/imagens/model3.png" alt=""></li>
-                    <li><img class="img-ativa"  src="assets/imagens/model2.png" alt=""></li>
-                    <li><img src="assets/imagens/model1.png" alt=""></li>
+                    <li><img class="img-ativa" src="assets/imagens/model3.png" alt="model3"></li>
+                    <li><img  src="assets/imagens/model2.png" alt="model2"></li>
+                    <li><img src="assets/imagens/model1.png" alt="model1"></li>
                 </ol>
             </div>
             <a href="https://cbns-cristian.github.io/portfolio-CristianDouglas/html/projetos.html" class="button-visual-borda">Ver todos os Projetos <span>&#11166</span></a>
@@ -177,5 +177,28 @@
      </footer>
 
      <script src="./assets/js/script.js" type="module" defer></script>
+     <script>
+        function trocarImgs(){
+            let imgMaior = document.querySelector('.img-maior img');
+            let galeriaImgs = document.querySelectorAll(".galeria-slider img");
+            let atributoMaior = imgMaior.getAttribute('src', "assets/imagens/model3.png")
+            
+    
+                galeriaImgs.forEach((item)=>{             
+                   item.addEventListener('click', ()=>{
+                    if(item.classList.contains('img-ativa')) return;
+        
+                    galeriaImgs.forEach(i => i.classList.remove('img-ativa'));
+                    
+                    item.classList.add('img-ativa');
+
+                    const imgSrc = item.getAttribute('src')
+                    imgMaior.setAttribute('src', `${imgSrc}`);
+                    })
+                })
+        };
+
+        trocarImgs();
+     </script>
 </body>
 </html>
